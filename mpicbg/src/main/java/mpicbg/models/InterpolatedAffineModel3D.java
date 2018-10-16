@@ -70,6 +70,43 @@ final public class InterpolatedAffineModel3D<
 			affine.set( ( ( InterpolatedAffineModel3D< A, B > ) m ).affine );
 	}
 
+	/**
+	 * Initialize the model such that the respective affine transform is:
+	 *
+	 * <pre>
+	 * m00 m01 m02 m03
+	 * m10 m11 m12 m13
+	 * m20 m21 m22 m23
+	 * 0   0   0   1
+	 * </pre>
+	 *
+	 * @param m00
+	 * @param m01
+	 * @param m02
+	 * @param m03
+	 *
+	 * @param m10
+	 * @param m11
+	 * @param m12
+	 * @param m13
+	 *
+	 * @param m20
+	 * @param m21
+	 * @param m22
+	 * @param m23
+	 */
+	final public void set(
+			final double m00, final double m01, final double m02, final double m03,
+			final double m10, final double m11, final double m12, final double m13,
+			final double m20, final double m21, final double m22, final double m23 )
+	{
+		affine.set(
+				m00, m01, m02, m03,
+				m10, m11, m12, m13,
+				m20, m21, m22, m23
+			);
+	}
+
 	@Override
 	public InterpolatedAffineModel3D< A, B > copy()
 	{
